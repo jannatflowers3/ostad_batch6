@@ -13,18 +13,19 @@ class Database{
     private $conn;
 
     public function __construct(){
-        $this->conn = new  mysqli($this->host,$this->user,$this->password,$this->db));
+        $this->conn = new mysqli($this->host,$this->user,$this->password,$this->db);
         if($this->conn->connect_error){
             die(json_encode(
                 [
                     "error"=>"Connection Failed"
                 ]
-            ))
-        }
+                ));
 
-     public function getConnection(){
+                }
+}
 
-     
-    }
+
+public function getConnection(){
+    return $this->conn;
 }
 }
